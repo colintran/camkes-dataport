@@ -2,12 +2,13 @@
 #include <mytype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdint.h>
 
 #define TRUE 1
-#define M_TICK 1000000
+#define M_TICK 2000000
 
 int run(void){
-  double time=0; 
+  uint32_t time=0; 
   int turn=0;
   char *name1 = "Master_1", 
        *name2 = "Master_2";
@@ -18,14 +19,11 @@ int run(void){
       ++turn;
       //	
       if(turn%2 == 0) 
-        strcpy(m1->name,name1);
+        strcpy((void*) m1->name,name1);
       else
-        strcpy(m1->name,name2);
+        strcpy((void*) m1->name,name2);
       m1->gender = (turn%2 == 0)?MALE:FEMALE;
       m1->turn = turn;
-      //Display
-      //printf("Buffer:\nname:\t%s\ngender:\t%d\nturn:\t%d\n",m1->name,\
-     //                                             m1->gender,m1->turn);
     }
     if (turn == 10) break;
   }
