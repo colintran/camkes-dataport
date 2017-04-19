@@ -1,0 +1,5 @@
+component Master {
+  include "mytype.h";
+  control;
+  dataport MyData_t m1;
+}

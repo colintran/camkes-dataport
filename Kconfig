@@ -1,0 +1,5 @@
+config APP_DATAPORT2
+  bool "Example Dataport"
+  default n
+   help 
+    Illustration of using buffer type

@@ -1,0 +1,12 @@
+import <std_connector.camkes>;
+import "components/Master/Master.camkes";
+import "components/Slave/Slave.camkes";
+
+assembly {
+  composition {
+    component Master master;
+    component Slave slave;
+
+    connection seL4SharedData sharedbuff1(from master.m1, to slave.s1);
+  }
+}

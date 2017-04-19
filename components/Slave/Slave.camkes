@@ -1,0 +1,6 @@
+component Slave {
+  include "mytype.h";
+  control;
+  dataport MyData_t s1;
+}
+
